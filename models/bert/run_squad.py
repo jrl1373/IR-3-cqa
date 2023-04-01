@@ -125,13 +125,13 @@ tf.flags.DEFINE_string(
 tf.flags.DEFINE_string(
     "tpu_zone", None,
     "[Optional] GCE zone where the Cloud TPU is located in. If not "
-    "specified, we will attempt to automatically detect the GCE project from "
+    "specified, we will attempt to automatically detect the GCE models from "
     "metadata.")
 
 tf.flags.DEFINE_string(
     "gcp_project", None,
-    "[Optional] Project name for the Cloud TPU-enabled project. If not "
-    "specified, we will attempt to automatically detect the GCE project from "
+    "[Optional] Project name for the Cloud TPU-enabled models. If not "
+    "specified, we will attempt to automatically detect the GCE models from "
     "metadata.")
 
 tf.flags.DEFINE_string("master", None, "[Optional] TensorFlow master URL.")
@@ -477,7 +477,7 @@ def _improve_answer_span(doc_tokens, input_start, input_end, tokenizer,
                          orig_answer_text):
   """Returns tokenized answer spans that better match the annotated answer."""
 
-  # The SQuAD annotations are character based. We first project them to
+  # The SQuAD annotations are character based. We first models them to
   # whitespace-tokenized words. But then after WordPiece tokenization, we can
   # often find a "better match". For example:
   #
@@ -988,7 +988,7 @@ def get_final_text(pred_text, orig_text, do_lower_case):
                       orig_ns_text, tok_ns_text)
     return orig_text
 
-  # We then project the characters in `pred_text` back to `orig_text` using
+  # We then models the characters in `pred_text` back to `orig_text` using
   # the character-to-character alignment.
   tok_s_to_ns_map = {}
   for (i, tok_index) in six.iteritems(tok_ns_to_s_map):

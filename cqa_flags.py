@@ -21,11 +21,11 @@ flags.DEFINE_string('f', '', 'kernel')
 
 ## Required parameters
 flags.DEFINE_string(
-    "bert_config_file", "project/wwm_uncased_L-24_H-1024_A-16/bert_config.json",
+    "bert_config_file", "models/wwm_uncased_L-24_H-1024_A-16/bert_config.json",
     "The config json file corresponding to the pre-trained BERT model. "
     "This specifies the model architecture.")
 
-flags.DEFINE_string("vocab_file", "project/wwm_uncased_L-24_H-1024_A-16/vocab.txt",
+flags.DEFINE_string("vocab_file", "models/wwm_uncased_L-24_H-1024_A-16/vocab.txt",
                     "The vocabulary file that the BERT model was trained on.")
 
 flags.DEFINE_string(
@@ -40,7 +40,7 @@ flags.DEFINE_string(
     "QuAC json for predictions.")
 
 flags.DEFINE_string(
-    "init_checkpoint", "project/wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt",
+    "init_checkpoint", "models/wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt",
     "Initial checkpoint (usually from a pre-trained BERT model).")
 
 
@@ -117,13 +117,13 @@ tf.compat.v1.flags.DEFINE_string(
 tf.compat.v1.flags.DEFINE_string(
     "tpu_zone", None,
     "[Optional] GCE zone where the Cloud TPU is located in. If not "
-    "specified, we will attempt to automatically detect the GCE project from "
+    "specified, we will attempt to automatically detect the GCE models from "
     "metadata.")
 
 tf.compat.v1.flags.DEFINE_string(
     "gcp_project", None,
-    "[Optional] Project name for the Cloud TPU-enabled project. If not "
-    "specified, we will attempt to automatically detect the GCE project from "
+    "[Optional] Project name for the Cloud TPU-enabled models. If not "
+    "specified, we will attempt to automatically detect the GCE models from "
     "metadata.")
 
 tf.compat.v1.flags.DEFINE_string("master", None, "[Optional] TensorFlow master URL.")

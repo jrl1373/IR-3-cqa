@@ -919,7 +919,7 @@ def transformer_model(input_tensor,
             activation=intermediate_act_fn,
             kernel_initializer=create_initializer(initializer_range))
 
-      # Down-project back to `hidden_size` then add the residual.
+      # Down-models back to `hidden_size` then add the residual.
       with tf.compat.v1.variable_scope("output"):
         layer_output = tf.compat.v1.layers.dense(
             intermediate_output,
